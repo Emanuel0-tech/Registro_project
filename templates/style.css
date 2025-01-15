@@ -1,0 +1,92 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Formulários */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Listagem */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.pacientes-lista a, .consultas-lista a {
+    color: #007bff;
+}
+
+.pacientes-lista a:hover, .consultas-lista a:hover {
+    text-decoration: underline;
+}
+
+/* Barra de Busca */
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
