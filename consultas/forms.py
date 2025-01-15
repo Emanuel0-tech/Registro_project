@@ -1,5 +1,5 @@
 from django import forms
-from ..pacientes.models import Consulta
+from  .models import Consulta
 
 class ConsultaForm(forms.ModelForm):
     class Meta:

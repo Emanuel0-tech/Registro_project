@@ -1,18 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ConsultaForm
 from pacientes.models import Paciente
-from .forms import PacienteForm
-
-def cadastrar_paciente(request):
-    if request.method == 'POST':
-        form = PacienteForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return
-    else:
-        form = PacienteForm()
-        return render(request, 'cadastrar_paciente.html', {'form': form})
-
 
 
 def registrar_consulta(request, paciente_id):
