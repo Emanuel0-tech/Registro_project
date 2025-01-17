@@ -5,6 +5,7 @@ from pacientes.views import cadastrar_paciente
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cadastrar/', cadastrar_paciente),
-    path("registrar/<int:paciente_id>/",registrar_consulta,),
+    path('', cadastrar_paciente),
+    path("registrar/<int:paciente_id>/", registrar_consulta,),
+
 ] 
