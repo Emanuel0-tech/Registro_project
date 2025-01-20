@@ -53,40 +53,59 @@
         button:hover {
             background-color: #218838;
         }
+
+       .alert{
+        text-align: center;
+        color: #218838;
+      font-size: 20px;
+       }
+    
+     
+
+       
     </style>
 
-    {% if alerta %}
-        window.onload = function() {
-            // Exibe o alerta
-            alert("{{ alerta }}");
-            
-            // Redireciona após o alerta
-            setTimeout(function() {
-                window.location.href = "{% url 'sucesso_cadastro' %}";  // Redireciona para a página de sucesso
-            }, 2000);  // Atraso de 2 segundos (2000 ms)
-        }
-    {% endif %}
+
 </head>
 <body>
-
-<div class="container">
-    <h2>Formulario de Registro de Pacientes</h2>
+    
+    <div class="container">
+        <!-- <div class="">
+            
+            {% if form.errors %}
+            <ul>
+                {% for field in form %}
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div> -->
+        <div class="alert">
+            
+            {% if alerta %}
+            Paciente cadastrado com sucesso!
+            {% endif %}
+            
+        </div>
+        <h2>Formulario de Registro de Pacientes</h2>
 
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}  <!-- Exibe os campos do formulário -->
+        <!-- {{ form.as_p }}   -->      <!-- Exibe os campos do formulário -->
+<div class="existe">
+    {% for field in form %}
+    {{field.label }} {% if field.errors %}{{field.errors}} {%endif%}
+
+       {{field }}
+
+{% endfor %}
+
+</div>
         <button type="submit">Cadastrar</button>
     </form>
 
-    {% if form.errors %}
-        <ul>
-            {% for field in form %}
-                {% for error in field.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            {% endfor %}
-        </ul>
-    {% endif %}
 
 </body>
 </html>

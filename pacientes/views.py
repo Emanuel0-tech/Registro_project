@@ -13,5 +13,13 @@ def cadastrar_paciente(request):
         form = Pacienteforms()
         return render(request, 'cadastrar_paciente.html', {'form': form})
 
+def sucesso_cadastro(request):
+    return render(request, 'sucessso_cadastro.html')
 
-   
+
+from django.shortcuts import render
+from .models import Paciente
+
+def registrar_paciente(request):
+    pacientes = Paciente.objects.all().order_by('nome')
+    return render(request, 'registrar_pacientes.html', {'pacientes': pacientes})
